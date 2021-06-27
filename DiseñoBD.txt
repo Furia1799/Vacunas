@@ -1,0 +1,40 @@
+* Usuarios
+- id_usuario int 5
+- tipou int 5        //1 normal, 2 admin
+- correo varchar 50
+- password varchar 50
+- nombre varchar 50
+
+* Automoviles
+- id_automovil int 5
+- nombre varchar 30
+- año int 4
+- n_puertas int 1
+- color varchar 30
+- marca varchar 50
+
+---------------------------------------------------------------------------------------
+
+CREATE TABLE  Usuarios
+   (	id_usuario number, 
+	tipou number,
+	usuario varchar(50), 
+	password varchar(50),
+	 CONSTRAINT "Usuarios_PK" PRIMARY KEY (id_usuario) ENABLE
+   ) ;
+
+CREATE TABLE  Automoviles
+   (	id_automovil number, 
+	nombre varchar(30), 
+	fecha number,  
+	n_puertas number,
+	color varchar(30),
+	marca varchar(50),
+	 CONSTRAINT "Automoviles_PK" PRIMARY KEY (id_automovil) ENABLE
+   ) ;
+
+
+CREATE SEQUENCE   Usuarios_SEQ  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
+CREATE SEQUENCE   Automoviles_SEQ  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
+
+insert into Usuarios values (Usuarios_SEQ.nextval, 1, 'juan', '123');
